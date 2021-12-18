@@ -21,7 +21,7 @@ async function run() {
       await client.connect();
       console.log("connected to db");
 
-      const database = await client.db("job_sites_data");
+      const database = client.db("job_sites_data");
       const userCollection = database.collection("users");
 
       //  user GET, POST, PUT
@@ -48,6 +48,8 @@ async function run() {
             );
             res.json(result);
          });
+
+      // get specific user email
    } finally {
       // await client.close();
    }
